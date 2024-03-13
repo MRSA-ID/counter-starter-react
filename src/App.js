@@ -2,6 +2,10 @@ import { useState } from 'react';
 import './App.css'
 import ShopingIcon from './assets/shopping-icon.svg'
 function App() {
+  const [value, setValue] = useState('')
+
+  console.log(value)
+
   return (
     <>
       <nav className="nav">
@@ -11,7 +15,9 @@ function App() {
 
       <section className='container'>
         <form className='form'>
-          <input 
+          <input
+            onChange={(e) => setValue(e.target.value)}
+            value={value} 
             className='input'
             type="text" 
             placeholder='List'
