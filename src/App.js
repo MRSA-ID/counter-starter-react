@@ -13,6 +13,11 @@ function App() {
     {title: 'Semangka', count: 1},
   ])
 
+  const HandleAdditionCount = (index) => {
+    const newTodos = [...todos]
+    newTodos[index].count = newTodos[index].count + 1
+    setTodos(newTodos)
+  }
 
   return (
     <>
@@ -45,7 +50,7 @@ function App() {
                     <button className='todo-action-button'>
                       <img src={MinusIcon} alt="minus icon"/>
                     </button>
-                    <button className='todo-action-button'>
+                    <button onClick={() => HandleAdditionCount(i)} className='todo-action-button'>
                       <img src={PlusIcon} alt="plus icon"/>
                     </button>
                   </div>
