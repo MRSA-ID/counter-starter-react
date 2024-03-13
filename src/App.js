@@ -8,6 +8,10 @@ function App() {
         <img src={ShopingIcon} alt="shopping_icon" className="nav-icon" />
         <h1 className="nav-title">Shooping List</h1>
       </nav>
+
+      <section className='container'>
+
+      </section>
     </>
   );
 }
