@@ -10,7 +10,14 @@ function App() {
       </nav>
 
       <section className='container'>
-
+        <form className='form'>
+          <input 
+            className='input'
+            type="text" 
+            placeholder='List'
+            />
+          <button className='add-button' type='submit'>add</button>
+        </form>
       </section>
     </>
   );
