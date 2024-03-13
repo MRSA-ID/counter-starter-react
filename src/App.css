@@ -64,3 +64,15 @@
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
 }
+
+.todos {
+  box-shadow: var(--main-box-shadow);
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 8px;
+  max-height: 640px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}

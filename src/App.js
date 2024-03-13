@@ -3,8 +3,12 @@ import './App.css'
 import ShopingIcon from './assets/shopping-icon.svg'
 function App() {
   const [value, setValue] = useState('')
+  const [todos, setTodos] = useState([
+    {title: 'Susu Ultra', count: 1},
+    {title: 'Tahu Sumedang', count: 1},
+    {title: 'Semangka', count: 1},
+  ])
 
-  console.log(value)
 
   return (
     <>
@@ -24,6 +28,20 @@ function App() {
             />
           <button className='add-button' type='submit'>add</button>
         </form>
+        {todos.length > 0 ? (
+          <div className='todos'>
+            {todos.map((todo, i) => {
+              return (
+                <div key={i}>
+                  {todo.title}
+                  {todo.count}
+                </div>
+              )
+            })}
+          </div>
+        ):(
+          <div>Kosong</div>
+        )}
       </section>
     </>
   );
