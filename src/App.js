@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import './App.css'
+import classNames from 'classnames';
 import ShopingIcon from './assets/shopping-icon.svg'
+import PlusIcon from './assets/plus-icon.svg'
+import MinusIcon from './assets/minus-icon.svg'
+
 function App() {
   const [value, setValue] = useState('')
   const [todos, setTodos] = useState([
@@ -30,11 +34,21 @@ function App() {
         </form>
         {todos.length > 0 ? (
           <div className='todos'>
-            {todos.map((todo, i) => {
+            {todos.map((todo, i, arr) => {
               return (
-                <div key={i}>
+                <div className={`todo ${!(arr.length === i + 1) && 'todo-divider'}`} key={i}>
                   {todo.title}
-                  {todo.count}
+                  <div className='todo-icon-wrapper'>
+                    <div className='todo-count'>
+                      {todo.count}
+                    </div>
+                    <button className='todo-action-button'>
+                      <img src={MinusIcon} alt="minus icon"/>
+                    </button>
+                    <button className='todo-action-button'>
+                      <img src={PlusIcon} alt="plus icon"/>
+                    </button>
+                  </div>
                 </div>
               )
             })}
