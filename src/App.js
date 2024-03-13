@@ -19,6 +19,12 @@ function App() {
     setTodos(newTodos)
   }
 
+  const HandleSubstractionCount = (index) => {
+    const newTodos = [...todos]
+    newTodos[index].count = newTodos[index].count - 1
+    setTodos(newTodos)
+  }
+
   return (
     <>
       <nav className="nav">
@@ -47,7 +53,7 @@ function App() {
                     <div className='todo-count'>
                       {todo.count}
                     </div>
-                    <button className='todo-action-button'>
+                    <button onClick={() => HandleSubstractionCount(i)} className='todo-action-button'>
                       <img src={MinusIcon} alt="minus icon"/>
                     </button>
                     <button onClick={() => HandleAdditionCount(i)} className='todo-action-button'>
