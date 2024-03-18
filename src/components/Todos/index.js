@@ -5,10 +5,10 @@ import classNames from 'classnames';
 import PlusIcon from '../../assets/plus-icon.svg'
 import MinusIcon from '../../assets/minus-icon.svg'
 
-const Todos = (props) => {
+const Todos = ({todos, onSubstraction, onAddition}) => {
   return (
     <div className={styles.todos}>
-      {props.todos.map((todo, i, arr) => {
+      {todos.map((todo, i, arr) => {
         return (
           <div 
             // className={`todo ${!(arr.length === i + 1) && styles.todoDivider}`} 
@@ -22,10 +22,10 @@ const Todos = (props) => {
               <div className={styles.todoCount}>
                 {todo.count}
               </div>
-              <button onClick={() => props.onSubstraction(i)} className={styles.todoActionButton}>
+              <button onClick={() => onSubstraction(i)} className={styles.todoActionButton}>
                 <img src={MinusIcon} alt="minus icon"/>
               </button>
-              <button onClick={() => props.onAddition(i)} className={styles.todoActionButton}>
+              <button onClick={() => onAddition(i)} className={styles.todoActionButton}>
                 <img src={PlusIcon} alt="plus icon"/>
               </button>
             </div>
