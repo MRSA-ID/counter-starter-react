@@ -6,6 +6,7 @@ import PlusIcon from './assets/plus-icon.svg'
 import MinusIcon from './assets/minus-icon.svg'
 import Navbar from './components/Navbar';
 import Container from './components/Container';
+import SearchInput from './components/SearchInput';
 
 function App() {
   const [value, setValue] = useState('')
@@ -23,6 +24,7 @@ function App() {
       count: 1
     }]
     setTodos(addedTodos)
+    setValue('')
   }
 
   const HandleAdditionCount = (index) => {
@@ -57,17 +59,12 @@ function App() {
       <Navbar/>
 
         <Container>
-          <form className='form' onSubmit={HandleSubmit}>
-            <input
-              onChange={(e) => setValue(e.target.value)}
-              value={value} 
-              className='input'
-              type="text" 
-              placeholder='List'
-              />
-            <button className='add-button' type='submit'>add</button>
-          </form>
-
+         
+          <SearchInput 
+            onSubmit={HandleSubmit} 
+            onChange={(e) => setValue(e.target.value)}
+            value={value}
+          />
           <div className="info">
             <div className="info-total">
               <p>{`Total List: ${todos.length}`}</p>
